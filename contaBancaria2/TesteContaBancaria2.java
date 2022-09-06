@@ -3,8 +3,7 @@ package contaBancaria2;
 import java.util.Scanner;
 
 public class TesteContaBancaria2 {
-	
-	public static void menu(){
+		public static void menu(){
 	       
     	//System.out.println("\nChatBoot - O que deseja?");
         System.out.println("\n0. Fim");
@@ -22,8 +21,8 @@ public class TesteContaBancaria2 {
 		
 		 String tipoConta = null;
 		 String nomeDono;
-		 double saque = 0;
-		 double deposito = 0;
+		 double saque = 0.0;
+		 double deposito = 0.0;
 		 int numConta;
 		
 		 int opcao;
@@ -42,14 +41,15 @@ public class TesteContaBancaria2 {
 		     		   
 		     		   System.out.print("Tipo da Conta: ");
 		     		   tipoConta = entrada.next();
-		     		
+		     		   
 		     		   System.out.print("Nome do Dono: ");
-		     		   nomeDono = entrada.next();
+		     		   nomeDono = entrada.next();		     		   
 		     		   
 		     		   System.out.print("Número da Conta: ");
 		     		   numConta = entrada.nextInt();
 
-		     		   c.setTipo(tipoConta);
+		     		   //c.setTipo(tipoConta);
+	
 		     		   c.abrirConta(tipoConta);   
 		     		   c.numConta = numConta;			     		   
 		     		   c.setNomeDono(nomeDono);
@@ -84,6 +84,7 @@ public class TesteContaBancaria2 {
 	        		System.out.println("Dono: " + c.getNomeDono());
 	        		System.out.println("Número: " + c.getNumConta());
 	        		System.out.println("Saldo: " + c.getSaldo());
+	        		System.out.println(c.getSaldo());
 	        		System.out.println("Depósito Atual: " + c.getDeposito());
 	        		System.out.println("Saque Atual: " + c.getSaque());
 	        		System.out.println("Taxa Mensal: " + c.getTaxaMensal());

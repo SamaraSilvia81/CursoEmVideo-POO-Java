@@ -7,8 +7,14 @@ public class Livro implements Publicacao {
 	private boolean aberto;
 	private Pessoa leitor;
 	
-	
-	public Livro(String titulo, String autor, int totalPaginas, boolean aberto, int pagAtual, Pessoa leitor) {
+	public String detalhes() {
+		return "Livro { titulo=" + titulo + "\n, autor=" + autor + 
+				"\n, totalPaginas=" + totalPaginas + " , pagAtual=" + pagAtual + 
+				"\n, aberto=" + aberto +
+				", leitor=" + leitor.getNome() + ", idade=" + leitor.getIdade() + ", sexo=" + leitor.getSexo() + " }";
+	}
+
+	public Livro(String titulo, String autor, int totalPaginas, Pessoa leitor) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.totalPaginas = totalPaginas;
@@ -17,21 +23,17 @@ public class Livro implements Publicacao {
 		this.leitor = leitor;
 	}
 	
-	public String detalhes() {
-		return "Livro [titulo=" + titulo + ", autor=" + autor + ", totalPaginas=" + totalPaginas + ", pagAtual="
-				+ pagAtual + ", aberto=" + aberto + ", leitor=" + leitor + "]";
-	}
 
 	@Override
 	public void abrir() {
 		this.setAberto(true);
-		System.out.println("O livro está aberto");
+		System.out.println("O livro estÃ¡ aberto");
 	}
 
 	@Override
 	public void fechar() {
 		this.setAberto(false);
-		System.out.println("O livro está fechado");
+		System.out.println("O livro estÃ¡ fechado");
 	}
 
 	@Override
@@ -40,7 +42,7 @@ public class Livro implements Publicacao {
 		if(this.getAberto()) {
 			this.pagAtual = p;		
 			System.out.println("Estou folheando...");
-			System.out.println("Página atual: " + this.getPagAtual());
+			System.out.println("PÃ¡gina atual: " + this.getPagAtual());
 		} else {
 			System.out.println("O livro precisa estar aberto");
 		}
@@ -51,7 +53,7 @@ public class Livro implements Publicacao {
 		
 		if(this.getAberto()) {
 			this.setPagAtual(pagAtual+1);
-			System.out.println("Você avançou uma página");
+			System.out.println("VocÃª avanÃ§ou uma pÃ¡gina");
 		}else {
 			System.out.println("O livro precisa estar aberto");
 		}
@@ -62,7 +64,7 @@ public class Livro implements Publicacao {
 		
 		if(this.getAberto()) {
 			this.setPagAtual(pagAtual-1);
-			System.out.println("Você retornou uma página");
+			System.out.println("VocÃª retornou uma pÃ¡gina");
 		}else {
 			System.out.println("O livro precisa estar aberto");
 		}

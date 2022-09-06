@@ -43,6 +43,13 @@ public class Livro implements Publicacao {
 			this.pagAtual = p;		
 			System.out.println("Estou folheando...");
 			System.out.println("Página atual: " + this.getPagAtual());
+		
+			if(p>this.totalPaginas) {
+				this.pagAtual = 0;
+			} else {
+				this.pagAtual = p;
+			}
+		
 		} else {
 			System.out.println("O livro precisa estar aberto");
 		}

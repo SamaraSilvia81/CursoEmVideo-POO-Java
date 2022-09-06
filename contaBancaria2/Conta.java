@@ -2,6 +2,7 @@ package contaBancaria2;
 
 public class Conta {
 	
+
 	public int numConta;
 	protected String tipo;  // poupança (cp) ou corrente (cc)
 	private String nomeDono;
@@ -94,9 +95,9 @@ public class Conta {
 		
 		this.tipo = tipoConta;
 		
-		if(tipoConta == "cc") {
+		if("cc".equals(tipoConta)) {
 			this.saldo = saldo + 50;
-		}else if(tipoConta == "cp") {
+		}else if("cp".equals(tipoConta)) {
 			this.saldo = saldo + 150;
 		}
 		
@@ -127,9 +128,12 @@ public class Conta {
 	
 	public void sacar(boolean status, double saque) {
 		
+		this.setSaque(saque);
+		
 		if(status == true && (saldo > 0 || saque <= saldo)) {
-			this.saldo = saldo - saque;
-			this.saque = saque;
+			
+			this.setSaldo(saldo-saque);
+			
 		}else if(status == false) {
 			System.out.println("Atenção - Você precisa ter uma conta aberta");
 		}else if(saldo < 0) {
@@ -142,8 +146,7 @@ public class Conta {
 	public double saqueTotal() {
 		return this.saque = saque + saque;
 	}
-	
-	
+
 	public void pagarMensal(String tipoConta) {
 		
 		if(tipoConta == "cc") {
@@ -154,6 +157,5 @@ public class Conta {
 			this.saldo = saldo - 20;
 		}
 	}
-	
 
 }

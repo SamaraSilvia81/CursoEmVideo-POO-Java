@@ -1,6 +1,8 @@
 # Relacionamento Entre Classes
 Esse conteúdo foi implementado nas aulas 07 e 08, tendo como premissa que relacionamento entre classes: _"Representa-se como uma relação de Dependência apontando de uma classe que possui um método ou operação para a classe que é utlizada como um parâmetro para essa operação."_ 
 
+Assim, para registros futuros eu resolvi pontuar o que aprendido e executado nas aulas, descrevendo a abordagem de codagem usada.
+
 ## Tópicos 
 - Aula 07
   - Aula07a - Relacionamento entre classes
@@ -26,4 +28,8 @@ O estudante deverá implementar um sistema de UEC (Ultra Emoji Combat) , aplican
   - Desafiado e desafiante devem ser lutadores diferentes;
   - Só pode acontecer se estiver aprovada;
   - Só pode ter como resultado a vitória de um dos lutadores ou o empate;
+- Classe Main:
+  - Nome:SistemaDeLutaUEC;
+  - Objetos Compostos: Como seria trabalhoso ter que instanciar diversas variáveis para criar os lutadores é mais simples criar um vetor de 6 posições (quantidade a gosto) e inicializá-los;
+  - Utilizei o sistema random para rodar aleatoriamente o índice dos jogadores, tornando mais prático o agendamento das lutas;
 
